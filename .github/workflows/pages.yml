@@ -22,9 +22,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --ignore-scripts --omit=optional
+      - name: Assemble static application
+        run: |
+          mkdir -p _site/node_modules/dompurify/dist
+          mkdir -p _site/node_modules/@highlightjs/cdn-assets/es
+          mkdir -p _site/node_modules/marked/lib
+          cp -R index.html src assets .nojekyll _site/
+          cp node_modules/dompurify/dist/purify.es.mjs _site/node_modules/dompurify/dist/
+          cp node_modules/@highlightjs/cdn-assets/es/highlight.min.js _site/node_modules/@highlightjs/cdn-assets/es/
+          cp node_modules/marked/lib/marked.esm.js _site/node_modules/marked/lib/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
