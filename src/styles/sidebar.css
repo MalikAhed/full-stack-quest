@@ -1,0 +1,81 @@
+.sidebar { position:fixed; top:var(--header-height); right:max(var(--space-4), calc((100vw - 1240px) / 2)); width:var(--rail-width); height:calc(100vh - var(--header-height)); overflow-y:auto; border:1px solid #e0e0e0; background:#f7f7f7; }
+.league { min-height:100%; padding:0 0 var(--space-4); }
+.game-header { padding:20px 18px; }
+.game-title-row { display:flex; align-items:center; justify-content:space-between; gap:16px; color:#6f6f6f; font-size:14px; font-weight:700; letter-spacing:.8px; }
+.game-title { display:flex; align-items:center; gap:10px; }
+.game-title > span:first-child { font-family:"Fredoka", "Arial Rounded MT Bold", sans-serif; font-size:16px; font-weight:700; letter-spacing:.2px; }
+.info-icon { width:24px; height:24px; display:grid; place-items:center; border:0; border-radius:50%; color:#fff; background:#858585; font-size:13px; font-weight:900; letter-spacing:0; }
+.week-label { color:#929292; white-space:nowrap; }
+.league-rank { width:100%; min-height:210px; display:grid; grid-template-columns:1fr; justify-items:center; align-items:center; gap:10px; margin-top:18px; padding:18px 20px 20px; border:1px solid #e5e5e5; border-radius:16px; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.035); }
+.rank-badge { position:relative; width:120px; height:120px; display:grid; place-items:center; overflow:hidden; }
+.rank-badge img { width:120px; height:120px; display:block; object-fit:contain; transform:scale(1.75); filter:drop-shadow(0 3px 2px rgba(93,49,19,.2)); }
+.rank-badge-number { position:absolute; z-index:1; display:grid; place-items:center; min-width:38px; height:38px; padding:0 8px; border:3px solid #fff5d5; border-radius:999px; background:#8b542a; color:#fff; font:700 17px "Fredoka",sans-serif; box-shadow:0 3px 0 #60381c; }
+.rank-details { width:100%; min-width:0; display:grid; align-content:center; gap:4px; }
+.rank-name { color:#965522; font-family:"Fredoka", "Arial Rounded MT Bold", sans-serif; font-size:18px; font-weight:700; letter-spacing:.3px; text-align:center; }
+.rank-progress, .challenge-progress {
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  border:2px solid var(--track-border, #d9dce4);
+  border-radius:999px;
+  background:#f1f3f6;
+}
+.rank-progress { width:100%; height:22px; padding:0; border:0; background:#fff4dc; box-shadow:none; --fill-color:#f5a623; --fill-highlight:#ffd56a; --track-border:transparent; }
+.rank-progress-fill, .challenge-progress-fill {
+  position:absolute;
+  z-index:0;
+  inset:0 auto 0 0;
+  width:var(--progress, 0%);
+  border-radius:999px;
+  background:var(--fill-color);
+  animation:progress-grow 1.05s cubic-bezier(.2,.8,.2,1) both;
+  transform-origin:left center;
+}
+.rank-progress-fill:before, .challenge-progress-fill:before {
+  content:"";
+  position:absolute;
+  top:2px;
+  right:5px;
+  left:5px;
+  height:3px;
+  border-radius:999px;
+  background:var(--fill-highlight);
+  opacity:.9;
+}
+.progress-count {
+  position:absolute;
+  z-index:2;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:#4f5968;
+  font-family:"Fredoka", "Arial Rounded MT Bold", sans-serif;
+  font-size:12px;
+  font-weight:700;
+  line-height:1;
+  letter-spacing:.35px;
+  text-shadow:0 1px 0 rgba(255,255,255,.7);
+  pointer-events:none;
+}
+.challenges { margin:0 var(--space-3) 20px; }
+.challenges-title { margin:2px 2px 12px; color:#737373; font-family:"Fredoka", "Arial Rounded MT Bold", sans-serif; font-size:16px; font-weight:700; letter-spacing:.2px; }
+.challenge-list { display:grid; gap:10px; }
+.challenge { display:grid; grid-template-columns:48px minmax(0,1fr) auto; gap:12px; align-items:center; padding:12px; border:1px solid #e5e5e5; border-radius:16px; background:#fff; box-shadow:0 2px 7px rgba(0,0,0,.025); }
+.challenge-icon { width:48px; height:48px; display:grid; place-items:center; }
+.challenge-icon img { width:46px; height:46px; object-fit:contain; }
+.challenge-name { margin-bottom:8px; color:#747474; font-family:"Fredoka", "Arial Rounded MT Bold", sans-serif; font-size:14px; font-weight:700; }
+.challenge-progress { height:20px; }
+.challenge--book .challenge-progress { --fill-color:#20aee8; --fill-highlight:#76d9f7; --track-border:#69bfe2; }
+.challenge--flame .challenge-progress { --fill-color:#f58a24; --fill-highlight:#ffc95b; --track-border:#eda95e; }
+.challenge--gem .challenge-progress { --fill-color:#ed3957; --fill-highlight:#ff8a99; --track-border:#e87989; }
+@keyframes progress-grow { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+.challenge-reward { min-width:42px; padding:7px 8px; border-radius:10px; background:#e1e1e1; color:#596068; font-family:"Fredoka", "Arial Rounded MT Bold", sans-serif; font-size:12px; font-weight:700; text-align:center; }
+.overview-backdrop { display:none; }
+
+.challenge { grid-template-areas:"icon name reward" "icon progress reward"; grid-template-columns:48px minmax(0,1fr) auto; grid-template-rows:auto auto; align-items:center; }
+.challenge-icon { grid-area:icon; }
+.challenge > div:nth-child(2) { display:contents; }
+.challenge-name { grid-area:name; margin:0 0 6px; }
+.challenge-progress { grid-area:progress; padding:0; border:0; background:color-mix(in srgb, var(--fill-color) 16%, white); box-shadow:none; --track-border:transparent; }
+.challenge-reward { grid-area:reward; align-self:end; min-width:48px; height:24px; display:grid; place-items:center; padding:0 9px; border-radius:9px; background:#ffd84d; color:#70470f; box-shadow:inset 0 -3px 0 #e4ad16; font-weight:700; }
+.sidebar-status { margin:4px var(--space-3) 0; padding:18px; border:1px solid #e5e5e5; border-radius:16px; background:#fff; color:#8a8a8a; font-family:"Fredoka", "Arial Rounded MT Bold", sans-serif; font-size:14px; font-weight:700; letter-spacing:.8px; text-align:center; box-shadow:0 2px 7px rgba(0,0,0,.025); }

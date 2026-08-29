@@ -1,0 +1,49 @@
+@media (max-width:900px) {
+  :root { --header-height:56px; --main-top-gap:16px; }
+  .page { width:min(680px, calc(100% - (var(--space-4) * 2))); }
+  .topbar { gap:var(--space-3); }
+  main { grid-template-columns:1fr; padding-top:calc(var(--header-height) + var(--main-top-gap)); }
+  .sidebar { display:block; z-index:30; top:calc(var(--header-height) + var(--space-2)); right:var(--space-3); bottom:var(--space-3); left:var(--space-3); width:auto; height:auto; padding-top:52px; overflow-y:auto; visibility:hidden; border-radius:18px; box-shadow:0 12px 40px rgba(0,0,0,.18); opacity:0; pointer-events:none; transform:translateY(-8px) scale(.985); transition:opacity var(--motion-standard) var(--ease-exit),transform var(--motion-standard) var(--ease-exit),visibility 0s linear var(--motion-standard); }
+  .overview-trigger { position:relative; display:grid; place-items:center; flex:0 0 44px; width:44px; height:44px; padding:0; border-radius:10px; }
+  .overview-trigger:before { content:""; width:16px; height:12px; border-top:2px solid #9a9a9a; border-bottom:2px solid #9a9a9a; }
+  .overview-trigger:after { content:""; position:absolute; width:16px; border-top:2px solid #9a9a9a; }
+  main.coming-mode .sidebar.is-open,main.lesson-mode .sidebar.is-open,.sidebar.is-open { display:block; visibility:visible; opacity:1; pointer-events:auto; transform:translateY(0) scale(1); transition-timing-function:var(--ease-enter); transition-delay:0s; }
+  .sidebar.is-open .league { min-height:calc(100% - 52px); }
+  .sidebar.is-open .modal-close { position:absolute; top:var(--space-2); right:var(--space-2); z-index:2; display:grid; place-items:center; width:32px; height:32px; padding:0; border-radius:50%; color:#596068; font-size:22px; line-height:1; }
+  .overview-backdrop { display:block; position:fixed; z-index:20; inset:0; visibility:hidden; background:rgba(255,255,255,.35); opacity:0; pointer-events:none; backdrop-filter:blur(7px); transition:opacity var(--motion-standard) var(--ease-exit),visibility 0s linear var(--motion-standard); }
+  .overview-backdrop.is-active { visibility:visible; opacity:1; pointer-events:auto; transition-timing-function:var(--ease-enter); transition-delay:0s; }
+  body.overview-open { overflow:hidden; }
+  .level { font-size:20px; }
+}
+@media (max-width:560px) {
+  .page { width:calc(100% - (var(--space-3) * 2)); }
+  .nav-links { justify-content:flex-start; gap:10px; }
+  .topbar-actions { gap:10px; }
+  .nav-item { flex:0 0 auto; }
+  .nav-item { padding:0 8px; }
+  .nav-item span, .status { display:none; }
+  .unit-card { height:190px; grid-template-columns:minmax(0,1fr) 120px; gap:14px; padding:22px 18px; }
+  .unit-card.unit-card--image { height:auto; padding:0; }
+  .level { padding-bottom:11px; font-size:17px; }
+  .level:before { inset:13px 0 0; }
+  .level:after { inset:0 0 13px; }
+  .coming-soon-card { padding:44px 18px; }
+  .coming-soon.is-more .coming-soon-card { padding:16px 0; }
+  .more-tab-list { grid-template-columns:1fr; gap:12px; }
+  .more-tab { min-height:112px; }
+  .lesson-shell--ui-lab .lesson-top { padding:10px 12px; }
+  .level-layout-preview { min-height:calc(100vh - 65px); }
+  .level-layout-task { padding:24px 18px; }
+  .level-concept { grid-template-columns:1fr; }
+  .level-concept>code,.level-concept>div { min-height:130px; }
+  .level-answer-list button { grid-template-columns:72px 1fr; min-height:62px; padding:0 14px; }
+  .level-layout-actions { min-height:76px; padding:12px; }
+  .level-action { min-width:0; min-height:48px; padding:0 16px; }
+  .coming-soon-title { font-size:22px; }
+  .lesson-top { gap:10px; }
+  .lesson-back { width:44px; height:44px; }
+  .lesson-card { padding:22px 16px; border-radius:20px; }
+  .lesson-top-title { font-size:16px; }
+  .lesson-hero { margin:-6px -2px 26px; padding:22px 18px; }
+}
+@media (prefers-reduced-motion:reduce) { html:focus-within { scroll-behavior:auto; } *, *:before, *:after { scroll-behavior:auto!important; transition-duration:.01ms!important; transition-delay:0ms!important; animation-duration:.01ms!important; animation-iteration-count:1!important; } }

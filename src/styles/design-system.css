@@ -1,0 +1,13 @@
+/* Development-only manifest. Keep imports in cascade order. */
+@import url("./design-system/assets.css");
+@import url("./design-system/foundations.css");
+@import url("./design-system/components.css");
+@import url("./design-system/questions.css");
+@import url("./design-system/showcases.css");
+@import url("./design-system/layout.css");
+@import url("./design-system/practice-lab.css");
+@import url("./design-system/practice-focus.css");
+@import url("./design-system/practice-level.css");
+@import url("./design-system/codicon-completions.css");
+@import url("./design-system/question-patterns.css");
+@import url("./design-system/lesson-content.css");

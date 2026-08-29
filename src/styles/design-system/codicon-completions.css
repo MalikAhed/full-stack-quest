@@ -1,0 +1,91 @@
+/* Official Microsoft VS Code Codicons for CodeMirror completion kinds. */
+@font-face {
+  font-family:"codicon";
+  font-display:block;
+  src:url("../../../node_modules/@vscode/codicons/dist/codicon.ttf") format("truetype");
+}
+
+.ds-code-lab .cm-completionIcon {
+  width:20px;
+  height:20px;
+  display:inline-grid;
+  flex:0 0 20px;
+  place-items:center;
+  margin-right:6px;
+  padding:0;
+  opacity:1;
+  box-sizing:border-box;
+  color:#c5c5c5;
+  font:normal normal normal 16px/1 codicon;
+  text-align:center;
+  text-rendering:auto;
+  -webkit-font-smoothing:antialiased;
+}
+.ds-code-lab .cm-completionIcon:after { content:none; }
+.ds-code-lab .cm-completionIcon:before { content:"\eb63"; }
+
+.ds-code-lab .cm-completionIcon-method:before,
+.ds-code-lab .cm-completionIcon-function:before,
+.ds-code-lab .cm-completionIcon-constructor:before { content:"\ea8c"; }
+.ds-code-lab .cm-completionIcon-variable:before { content:"\ea88"; }
+.ds-code-lab .cm-completionIcon-array:before { content:"\ea8a"; }
+.ds-code-lab .cm-completionIcon-module:before,
+.ds-code-lab .cm-completionIcon-package:before,
+.ds-code-lab .cm-completionIcon-namespace:before,
+.ds-code-lab .cm-completionIcon-object:before { content:"\ea8b"; }
+.ds-code-lab .cm-completionIcon-boolean:before,
+.ds-code-lab .cm-completionIcon-null:before { content:"\ea8f"; }
+.ds-code-lab .cm-completionIcon-number:before,
+.ds-code-lab .cm-completionIcon-numeric:before { content:"\ea90"; }
+.ds-code-lab .cm-completionIcon-type:before,
+.ds-code-lab .cm-completionIcon-struct:before,
+.ds-code-lab .cm-completionIcon-structure:before { content:"\ea91"; }
+.ds-code-lab .cm-completionIcon-parameter:before,
+.ds-code-lab .cm-completionIcon-typeParameter:before,
+.ds-code-lab .cm-completionIcon-type-parameter:before { content:"\ea92"; }
+.ds-code-lab .cm-completionIcon-key:before,
+.ds-code-lab .cm-completionIcon-text:before { content:"\ea93"; }
+.ds-code-lab .cm-completionIcon-reference:before { content:"\ea94"; }
+.ds-code-lab .cm-completionIcon-enum:before,
+.ds-code-lab .cm-completionIcon-value:before { content:"\ea95"; }
+.ds-code-lab .cm-completionIcon-unit:before { content:"\ea96"; }
+.ds-code-lab .cm-completionIcon-event:before { content:"\ea86"; }
+.ds-code-lab .cm-completionIcon-class:before { content:"\eb5b"; }
+.ds-code-lab .cm-completionIcon-color:before { content:"\eb5c"; }
+.ds-code-lab .cm-completionIcon-constant:before { content:"\eb5d"; }
+.ds-code-lab .cm-completionIcon-enumMember:before,
+.ds-code-lab .cm-completionIcon-enum-member:before { content:"\eb5e"; }
+.ds-code-lab .cm-completionIcon-field:before { content:"\eb5f"; }
+.ds-code-lab .cm-completionIcon-file:before { content:"\eb60"; }
+.ds-code-lab .cm-completionIcon-interface:before { content:"\eb61"; }
+.ds-code-lab .cm-completionIcon-keyword:before { content:"\eb62"; }
+.ds-code-lab .cm-completionIcon-operator:before { content:"\eb64"; }
+.ds-code-lab .cm-completionIcon-property:before { content:"\eb65"; }
+.ds-code-lab .cm-completionIcon-snippet:before { content:"\eb66"; }
+.ds-code-lab .cm-completionIcon-string:before { content:"\eb8d"; }
+.ds-code-lab .cm-completionIcon-folder:before { content:"\ea83"; }
+
+/* VS Code's default dark-theme symbol colors. */
+.ds-code-lab .cm-completionIcon-method,
+.ds-code-lab .cm-completionIcon-function,
+.ds-code-lab .cm-completionIcon-constructor { color:#b180d7; }
+.ds-code-lab .cm-completionIcon-variable,
+.ds-code-lab .cm-completionIcon-key,
+.ds-code-lab .cm-completionIcon-text { color:#9cdcfe; }
+.ds-code-lab .cm-completionIcon-class,
+.ds-code-lab .cm-completionIcon-interface,
+.ds-code-lab .cm-completionIcon-struct,
+.ds-code-lab .cm-completionIcon-structure,
+.ds-code-lab .cm-completionIcon-event,
+.ds-code-lab .cm-completionIcon-enum { color:#ee9d28; }
+.ds-code-lab .cm-completionIcon-constant,
+.ds-code-lab .cm-completionIcon-field,
+.ds-code-lab .cm-completionIcon-enumMember,
+.ds-code-lab .cm-completionIcon-enum-member { color:#4fc1ff; }
+.ds-code-lab .cm-completionIcon-property { color:#75beff; }
+.ds-code-lab .cm-completionIcon-keyword { color:#c586c0; }
+.ds-code-lab .cm-completionIcon-number,
+.ds-code-lab .cm-completionIcon-numeric { color:#b5cea8; }
+.ds-code-lab .cm-completionIcon-string { color:#ce9178; }
+.ds-code-lab .cm-completionIcon-boolean,
+.ds-code-lab .cm-completionIcon-null { color:#569cd6; }

@@ -1,0 +1,19 @@
+:root {
+  --quest-theme-text:#49351f;
+  --quest-theme-shadow-color:rgba(73,53,31,.32);
+  --quest-theme-base:#7e694e;
+  --quest-theme-shadow:#60503c;
+  --quest-theme-border:#d4be95;
+  --quest-theme-top:#e0c79f;
+  --quest-theme-main:#c7a77b;
+  --quest-theme-bottom:#aa926c;
+  --quest-theme-line:color-mix(in srgb,var(--quest-theme-main) 38%,white);
+  --quest-theme-line-strong:color-mix(in srgb,var(--quest-theme-main) 58%,white);
+  --quest-theme-soft:color-mix(in srgb,var(--quest-theme-main) 12%,white);
+  --quest-theme-soft-strong:color-mix(in srgb,var(--quest-theme-main) 26%,white);
+  --quest-theme-surface:color-mix(in srgb,var(--quest-theme-main) 6%,white);
+  --quest-theme-surface-strong:color-mix(in srgb,var(--quest-theme-main) 16%,white);
+  --quest-theme-muted-text:color-mix(in srgb,var(--quest-theme-text) 76%,white);
+  --quest-theme-focus:color-mix(in srgb,var(--quest-theme-main) 30%,transparent);
+  --quest-theme-shadow-soft:color-mix(in srgb,var(--quest-theme-text) 14%,transparent);
+}
