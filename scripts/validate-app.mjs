@@ -20,12 +20,33 @@ async function assertFile(relativePath, context) {
   }
 }
 
-async function readPngSize(relativePath) {
+async function readImageSize(relativePath) {
   const file = await open(path.join(projectRoot, relativePath), "r");
   try {
-    const header = Buffer.alloc(24);
+    const header = Buffer.alloc(30);
     await file.read(header, 0, header.length, 0);
-    return { width:header.readUInt32BE(16), height:header.readUInt32BE(20) };
+    if (header.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) {
+      return { width:header.readUInt32BE(16), height:header.readUInt32BE(20) };
+    }
+    if (header.toString("ascii", 0, 4) === "RIFF" && header.toString("ascii", 8, 12) === "WEBP") {
+      const format = header.toString("ascii", 12, 16);
+      if (format === "VP8 ") {
+        return { width:header.readUInt16LE(26) & 0x3fff, height:header.readUInt16LE(28) & 0x3fff };
+      }
+      if (format === "VP8L") {
+        return {
+          width:1 + header[21] + ((header[22] & 0x3f) << 8),
+          height:1 + (header[22] >> 6) + (header[23] << 2) + ((header[24] & 0x0f) << 10),
+        };
+      }
+      if (format === "VP8X") {
+        return {
+          width:1 + header.readUIntLE(24, 3),
+          height:1 + header.readUIntLE(27, 3),
+        };
+      }
+    }
+    throw new Error(`Unsupported image format: ${relativePath}`);
   } finally {
     await file.close();
   }
@@ -50,11 +71,11 @@ for (const [index, week] of COURSE_WEEKS.entries()) {
   assert(week.positions.length === DAYS_PER_WEEK, `week ${weekNumber} must define ${DAYS_PER_WEEK} level positions`);
   assert(week.positions.every(([left, top]) => Number.isFinite(left) && Number.isFinite(top)), `week ${weekNumber} has an invalid level position`);
   await assertFile(week.cardImage, `week ${weekNumber}`);
-  const cardSize = await readPngSize(week.cardImage);
+  const cardSize = await readImageSize(week.cardImage);
   assert(cardSize.width === (week.cardWidth || 1979) && cardSize.height === (week.cardHeight || 794), `week ${weekNumber} card dimensions do not match its HTML metadata`);
-  const biomePath = `assets/biomes/${weekNumber}.png`;
+  const biomePath = `assets/biomes/${weekNumber}.webp`;
   await assertFile(biomePath, `week ${weekNumber}`);
-  const biomeSize = await readPngSize(biomePath);
+  const biomeSize = await readImageSize(biomePath);
   assert(biomeSize.width === 941 && biomeSize.height === (week.biomeHeight || 1672), `week ${weekNumber} biome dimensions do not match its HTML metadata`);
 }
 

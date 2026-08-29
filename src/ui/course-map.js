@@ -32,7 +32,7 @@ export function renderCourseMapMarkup() {
     const firstDay = weekIndex * DAYS_PER_WEEK + 1;
     const isLaunchNexus = weekNumber === COURSE_WEEKS.length;
     const days = week.positions.map((position, index) => createDayButton(firstDay + index, position, isLaunchNexus)).join("");
-    return `<section class="course-unit" id="week-${weekNumber}" aria-label="Week ${weekNumber}" style="${themeStyle(WEEK_THEMES[weekIndex])}"><div class="level-path"><img class="biome-image" src="assets/biomes/${weekNumber}.png" width="941" height="${week.biomeHeight || 1672}" alt="" ${imageLoadingAttributes(weekNumber)} />${createWeekCard(week, firstDay, weekNumber)}${days}</div></section>`;
+    return `<section class="course-unit" id="week-${weekNumber}" aria-label="Week ${weekNumber}" style="${themeStyle(WEEK_THEMES[weekIndex])}"><div class="level-path"><img class="biome-image" src="assets/biomes/${weekNumber}.webp" width="941" height="${week.biomeHeight || 1672}" alt="" ${imageLoadingAttributes(weekNumber)} />${createWeekCard(week, firstDay, weekNumber)}${days}</div></section>`;
   }).join("");
 }
 

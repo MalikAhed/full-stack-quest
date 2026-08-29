@@ -694,7 +694,7 @@ You are done only when all of this evidence exists:
 Grid's parent defines tracks; its direct children occupy them. Minimums decide what can fit, gaps consume space, and \`fr\` divides what remains. Start with the narrow fallback, add wider capability, and debug the container width the browser actually used.
 :::
 
-![A Grid parent defines auto-fit tracks with a 250px minimum and 1fr sharing; the same direct-child cards fit into three, two, or one track as container width changes, while a two-track span is reserved for wide layouts and DevTools verifies the actual container width and winning rule.](assets/lessons/day-006/css-grid-responsive-recap.png)
+![A Grid parent defines auto-fit tracks with a 250px minimum and 1fr sharing; the same direct-child cards fit into three, two, or one track as container width changes, while a two-track span is reserved for wide layouts and DevTools verifies the actual container width and winning rule.](assets/lessons/day-006/css-grid-responsive-recap.webp)
 
 Read from the **Grid parent** into the three simultaneous width outcomes. Then use the bottom reminders as your debugging rule: apply \`span 2\` only where the intended tracks exist, and inspect the container's **actual width** plus the **winning rule** before changing CSS.
 

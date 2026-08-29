@@ -565,7 +565,7 @@ When CSS looks wrong, do not add another declaration first. Select the element, 
 
 Start at **Matching rules** and move clockwise: the browser resolves competing declarations through the cascade, exposes the final value in **Computed**, and uses that result while laying out the rendered box. Then follow **Inspect, then edit** back to the source: inspect the evidence, test one hypothesis, and only then make the permanent change. If the selected element has no winning declaration for an inheritable property, trace the value to the ancestor that supplied it.
 
-![Matching CSS rules pass through origin, specificity, and source order to a cascade winner, which becomes the computed value used by the rendered box; inspection traces the rendered evidence back to the source before editing.](assets/lessons/day-004/css-evidence-loop-recap.png)
+![Matching CSS rules pass through origin, specificity, and source order to a cascade winner, which becomes the computed value used by the rendered box; inspection traces the rendered evidence back to the source before editing.](assets/lessons/day-004/css-evidence-loop-recap.webp)
 `;
 
 export default defineMarkdownLesson({

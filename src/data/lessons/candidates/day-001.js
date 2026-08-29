@@ -405,7 +405,7 @@ Close your notes. Stand up and explain the journey using this spine:
 
 Use the recap as one loop, not a collection of boxes. Start at **URL**, follow the upper route through DNS and the protected request to **Server work**, then trace the lower response route back through the page dependencies to **Pixels**. The stored/computed split reminds you that server work can return existing content or calculate a result; in either case, the browser constructs the visible page.
 
-![A browser sends a DNS lookup and receives an IP address, sends an HTTP request over a TCP and TLS protected path to server work that uses stored or computed content, then receives an HTTP response and turns HTML, CSS, and JavaScript dependencies into pixels.](assets/lessons/day-001/fresh-https-navigation-recap.png)
+![A browser sends a DNS lookup and receives an IP address, sends an HTTP request over a TCP and TLS protected path to server work that uses stored or computed content, then receives an HTTP response and turns HTML, CSS, and JavaScript dependencies into pixels.](assets/lessons/day-001/fresh-https-navigation-recap.webp)
 
 You are done when you can:
 

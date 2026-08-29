@@ -625,7 +625,7 @@ You are done when you can do all of this without notes:
 
 Use this final map as a fast review, not as a replacement for the tables above. Follow the upper lane from the browser to the server: the request declares its method and carries context and data. Return along the lower lane: the response reports its status and carries its own context and result. Then use the three prompts beside the server to ask whether the method is safe, whether a repeated request is idempotent, and whether the current request carries the context that stateless HTTP requires. Finish along the evidence strip from **predict** to **inspect** to **explain**.
 
-![A browser sends a request containing method, headers, and body to a server, which returns a response containing status, headers, and body; review asks whether the method is safe, whether repeats are idempotent, and whether the current request carries the context stateless HTTP requires before moving from prediction to inspection to explanation.](assets/lessons/day-002/http-contract-recap.png)
+![A browser sends a request containing method, headers, and body to a server, which returns a response containing status, headers, and body; review asks whether the method is safe, whether repeats are idempotent, and whether the current request carries the context stateless HTTP requires before moving from prediction to inspection to explanation.](assets/lessons/day-002/http-contract-recap.webp)
 
 :::remember The durable review rule
 Treat method, status, headers, and body as one contract. Predict what each part claims, inspect what the system actually did, and reject implementations whose claims disagree with their effects.

@@ -248,7 +248,7 @@ export function renderUiLab(container, { definition, embedded = false, onBack, o
         const nudge = document.createElement("div");
         nudge.className = "ui-lab-response-nudge";
         nudge.setAttribute("role", "status");
-        nudge.innerHTML = `<img src="assets/mascots/chibi-placeholder.png" alt="" /><div class="ui-lab-response-bubble"><strong>${escapeHtml(config.guideTitle)}</strong><p>${escapeHtml(config.guide)}</p><button type="button" data-dismiss-response-guide>UNDERSTOOD</button></div>`;
+        nudge.innerHTML = `<img src="assets/mascots/chibi-placeholder.webp" alt="" /><div class="ui-lab-response-bubble"><strong>${escapeHtml(config.guideTitle)}</strong><p>${escapeHtml(config.guide)}</p><button type="button" data-dismiss-response-guide>UNDERSTOOD</button></div>`;
         nudge.style.left = `${Math.min(window.innerWidth - 460, Math.max(20, composerRect.left - 72))}px`;
         nudge.style.top = `${Math.max(20, composerRect.top - 142)}px`;
         document.body.append(nudge);

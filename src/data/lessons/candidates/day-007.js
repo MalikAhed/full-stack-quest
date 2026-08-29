@@ -490,7 +490,7 @@ You are done when all of this is true:
 - a fresh clone in a separate folder opens correctly with no missing stylesheet or image; and
 - from a cold terminal in a new project, you can perform \`init → gitignore → add → commit → remote → push\` without opening another tab.
 
-![Git state recap: the working tree with app.css v2 flows through git add to a staging index that still has app.css v1, then git commit records a snapshot linked to its parent, git push sends committed history to the remote, and git clone reconstructs a separate fresh folder; comparison brackets place git diff between working and staging and git diff --staged between staging and the current commit.](assets/lessons/day-007/git-state-to-clone-recap.png)
+![Git state recap: the working tree with app.css v2 flows through git add to a staging index that still has app.css v1, then git commit records a snapshot linked to its parent, git push sends committed history to the remote, and git clone reconstructs a separate fresh folder; comparison brackets place git diff between working and staging and git diff --staged between staging and the current commit.](assets/lessons/day-007/git-state-to-clone-recap.webp)
 
 **How to read this recap:** Follow the solid arrows from the folder you edit to the separate clone that proves the remote. Then scan the two brackets: each diff command compares the states at its endpoints, while the two \`app.css\` cards show that working and staged content can differ at the same moment.
 

@@ -559,7 +559,7 @@ Flexbox arranges a parent's direct children in one direction. The parent chooses
 
 Start at **Parent controls**, then move into the central flex container. The parent chooses the direction and controls alignment, gaps, and wrapping for its direct children. The main axis follows that direction; the cross axis stays perpendicular. **Child share** is separate because \`flex\` belongs to an item, not the container. Finally, follow the three lower branches to revisit where the same model powered today's nav, card row, and sticky footer.
 
-![Parent controls feed a Flex container whose direct children follow a main axis and perpendicular cross axis, while each child's flex value controls its share; the same parent-child model branches into the navigation, card-row, and sticky-footer layouts.](assets/lessons/day-005/flexbox-relationship-recap.png)
+![Parent controls feed a Flex container whose direct children follow a main axis and perpendicular cross axis, while each child's flex value controls its share; the same parent-child model branches into the navigation, card-row, and sticky-footer layouts.](assets/lessons/day-005/flexbox-relationship-recap.webp)
 
 Use the picture as a debugging map: identify the direct parent, name its main axis, then decide whether the property belongs to the group or to one child.
 

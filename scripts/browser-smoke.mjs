@@ -306,7 +306,7 @@ try {
       Promise.all(lessonPaths.map((lessonPath) => import(lessonPath))),
       import('/src/markdown/renderer.js'),
     ]);
-    const imageMarkdown = lessonModules.map(({ LESSON_MARKDOWN }) => LESSON_MARKDOWN.match(/^!\\[[^\\n]+\\]\\(assets\\/lessons\\/day-\\d{3}\\/[^\\n)]+\\.png\\)$/m)?.[0]).filter(Boolean);
+    const imageMarkdown = lessonModules.map(({ LESSON_MARKDOWN }) => LESSON_MARKDOWN.match(/^!\\[[^\\n]+\\]\\(assets\\/lessons\\/day-\\d{3}\\/[^\\n)]+\\.webp\\)$/m)?.[0]).filter(Boolean);
     const host = document.createElement('div');
     host.className = 'markdown-rendered';
     host.style.width = '700px';

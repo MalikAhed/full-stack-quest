@@ -520,7 +520,7 @@ Close the editor and answer aloud:
 
 Use this diagram as a final scan, not as a substitute for the code you wrote. Start with the semantic page in the center, then move clockwise: structure gives the document its hierarchy; native links and buttons provide the right behavior; form attributes connect labels and submitted keys; and keyboard focus plus the query string provide observable proof. The plain branch lines show that all four contracts belong to the same document, while arrows show actual navigation, action, focus movement, or submitted-data flow.
 
-![A semantic HTML page connects to four recap branches: sibling header, main, and footer regions with an h1-to-h2-to-h3 hierarchy; links leading to destinations and buttons triggering actions; label for matching control id and name flowing into a request; and Tab focus plus submission query data providing browser evidence.](assets/lessons/day-003/semantic-html-contracts-recap.png)
+![A semantic HTML page connects to four recap branches: sibling header, main, and footer regions with an h1-to-h2-to-h3 hierarchy; links leading to destinations and buttons triggering actions; label for matching control id and name flowing into a request; and Tab focus plus submission query data providing browser evidence.](assets/lessons/day-003/semantic-html-contracts-recap.webp)
 
 You are done when you can navigate the entire page and submit fake form data with the keyboard alone, every focus stop is visible, the URL proves which named controls were submitted, and you can say this sentence without notes:
 
