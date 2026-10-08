@@ -1,6 +1,15 @@
 # Full-Stack Quest
 
-A browser-based full-stack learning project with a themed course map, interactive lessons, and locally saved progress. The map defines 16 weeks; the current lesson registry includes days 1–7.
+Learning full-stack development is often fragmented across tutorials: learners
+lose their place, cannot see how topics connect, and have no durable record of
+what they have practiced. Full-Stack Quest turns that gap into a navigable,
+small-step learning path with a course map, interactive lessons, reviewed
+examples, and locally saved progress.
+
+It is a browser-based learning project, not a claim that the whole curriculum is
+finished. The map defines 16 weeks; the current lesson registry intentionally
+starts with days 1–7 so each published step can be tested and revised before
+more material is added.
 
 ## Run locally
 
