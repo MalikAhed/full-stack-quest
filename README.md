@@ -1,5 +1,6 @@
 # Full-Stack Quest
 
+[Open the published course](https://malikahed.github.io/full-stack-quest/)
 A browser-based full-stack learning project with a themed course map, interactive lessons, and locally saved progress. The map defines 16 weeks; the current lesson registry includes days 1–7.
 
 ## Run locally
